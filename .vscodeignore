@@ -1,0 +1,9 @@
+.vscode
+.editorconfig
+.gitignore
+node_modules
+out/
+!out/extension.js
+code/
+tsconfig.json
+*.vsix

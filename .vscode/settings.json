@@ -1,0 +1,15 @@
+{
+    // exclude generated stuff
+    "files.exclude": { "node_modules": true, "out": true },
+    "search.exclude": { "node_modules": true, "out": true },
+
+    // our tasks already take care of that
+    "typescript.tsc.autoDetect": "off",
+
+    // workspace tab settings
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+
+    // I hate useless spaces
+    "files.trimTrailingWhitespace": true
+}

@@ -1,0 +1,53 @@
+{
+    "name": "sane-vscode-clangd",
+    "displayName": "Sane Clangd",
+    "description": "Sane Clangd integration extension into Visual Studio Code",
+    "version": "0.0.1",
+    "publisher": "damiencourtois",
+    "license": "WTFPL",
+    "homepage": "https://github.com/dcourtois/sane-vscode-clangd",
+    "repository": { "url": "https://github.com/dcourtois/sane-vscode-clangd", "type": "git" },
+    "bugs": { "url": "https://github.com/dcourtois/sane-vscode-clangd/issues" },
+    "categories": [ "Other" ],
+    "engines": { "vscode": "^1.64.0" },
+    "activationEvents": [ "*" ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "configuration": {
+            "type": "object",
+            "title": "Clangd Configuration",
+            "properties": {
+                "clangd.development": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Set to true to create a custom log output panel used to output verbose development logs."
+                },
+                "clangd.path": {
+                    "type": "string",
+                    "default": "clangd",
+                    "description": "Path to the Clangd executable. Changing that will restart the language server."
+                },
+                "clangd.options": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "default": [],
+                    "description": "Command line arguments passed to Clangd. Changing that will restart the language server."
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "esbuild ./code/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node --minify",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./"
+    },
+    "dependencies": {
+        "vscode-languageclient": "^7.0.0"
+    },
+    "devDependencies": {
+        "@types/node": "^16.4.13",
+        "@types/vscode": "^1.64.0",
+        "typescript": "^4.5.5",
+        "esbuild": "^0.14.23"
+    }
+}

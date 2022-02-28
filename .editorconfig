@@ -1,0 +1,10 @@
+# Top-most EditorConfig file, apply to everyone
+root = true
+
+# Spaces, spaces everywhere !!!!
+# Also newlines at end of files and remove trailing whitespces.
+[*]
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
